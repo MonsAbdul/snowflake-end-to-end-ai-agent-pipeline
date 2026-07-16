@@ -1,32 +1,46 @@
-# End-to-End Snowflake AI Agent Pipeline
+# Snowflake End-to-End AI Agent Pipeline
 
 <p align="center">
   <img src="https://img.shields.io/badge/Snowflake-Data%20Cloud-29B5E8?style=for-the-badge&logo=snowflake&logoColor=white" alt="Snowflake">
-  <img src="https://img.shields.io/badge/Cortex%20AI-AI%20Enrichment-6C5CE7?style=for-the-badge" alt="Cortex AI">
-  <img src="https://img.shields.io/badge/Dynamic%20Tables-Live%20Pipeline-00A878?style=for-the-badge" alt="Dynamic Tables">
-  <img src="https://img.shields.io/badge/Cortex%20Search-Retrieval-FF8C42?style=for-the-badge" alt="Cortex Search">
+  <img src="https://img.shields.io/badge/Cortex%20AI-Sentiment%20%26%20Classification-6C5CE7?style=for-the-badge" alt="Cortex AI">
+  <img src="https://img.shields.io/badge/Dynamic%20Tables-Live%20Enrichment-00A878?style=for-the-badge" alt="Dynamic Tables">
+  <img src="https://img.shields.io/badge/Cortex%20Search-Agent%20Retrieval-FF8C42?style=for-the-badge" alt="Cortex Search">
   <img src="https://img.shields.io/badge/RBAC%20%2B%20Masking-Governed-DC3545?style=for-the-badge" alt="RBAC and Masking">
-  <img src="https://img.shields.io/badge/Validation-Passed-2EA44F?style=for-the-badge" alt="Validation Passed">
+  <img src="https://img.shields.io/badge/System%20Validation-Passed-2EA44F?style=for-the-badge" alt="Validation Passed">
 </p>
 
 <p align="center">
-  <strong>A governed Snowflake data and AI architecture that converts marketing performance, sales activity and customer feedback into an agent-ready intelligence layer.</strong>
+  <strong>
+    A governed Snowflake data and AI architecture that transforms marketing performance,
+    sales activity and customer feedback into an agent-ready intelligence system.
+  </strong>
+</p>
+
+<p align="center">
+  Structured analytics • Unstructured-text enrichment • Retrieval • Agent orchestration • Data governance
 </p>
 
 ---
 
-## Project Overview
+## Executive Summary
 
-This project implements an end-to-end Snowflake AI workflow that brings together structured business data and unstructured customer-support feedback.
+This project implements a complete **data-to-agent workflow** inside Snowflake.
 
-The solution enriches support transcripts with Cortex AI, maintains the enriched results through a Snowflake Dynamic Table, models the data through a Semantic View, enables retrieval through Cortex Search and exposes the complete system through a Marketing and Sales Intelligence Agent.
+The solution combines structured marketing, product, sales and social-media data with unstructured customer-support transcripts. Snowflake Cortex AI is used to generate sentiment and issue classifications, while a Dynamic Table maintains a live enriched dataset that connects campaign engagement with customer experience.
 
-The Agent can answer analytical questions, explain customer sentiment, retrieve campaign information, generate visual outputs and send results through a Snowflake stored procedure.
+A Semantic View provides business-friendly analytical relationships. Cortex Search provides a retrieval layer over campaign information. These components are then exposed through a Marketing and Sales Intelligence Agent capable of answering analytical questions, retrieving campaign context, generating charts and delivering findings through a Snowflake email procedure.
 
-I also completed the optional governance implementation by creating a restricted role, a secure view and a Dynamic Data Masking policy. The security controls were verified by showing real engagement values to an administrator and masked values to the restricted marketing role.
+The project also includes an enterprise-governance layer:
+
+- Role-Based Access Control
+- A restricted marketing role
+- A secure view
+- Dynamic Data Masking
+- Role-specific verification
+- Automated end-to-end SQL validation
 
 > [!IMPORTANT]
-> The completed implementation passed the supplied Snowflake validation framework and returned:
+> The completed architecture passed the supplied Snowflake validation framework and returned:
 >
 > **You've successfully completed the From Zero to Agents lab!**
 
@@ -34,45 +48,87 @@ I also completed the optional governance implementation by creating a restricted
 
 ## Recruiter Snapshot
 
-| Area | Implementation |
+| Engineering Area | Implemented Capability |
 |---|---|
 | Cloud data platform | Snowflake |
-| AI enrichment | Cortex AI sentiment analysis and classification |
+| Structured data | Campaigns, products, sales and social-media metrics |
+| Unstructured data | Customer-support transcripts |
+| AI enrichment | Cortex AI sentiment analysis and issue classification |
 | Pipeline automation | Snowflake Dynamic Tables |
-| Structured analytics | Snowflake Semantic View |
-| Retrieval | Cortex Search |
+| Business modelling | Snowflake Semantic View |
+| Retrieval architecture | Cortex Search |
 | AI application | Marketing and Sales Intelligence Agent |
-| Agent tools | Semantic analysis, search and email delivery |
+| Agent tools | Structured analytics, retrieval and email delivery |
 | Governance | RBAC, secure views and Dynamic Data Masking |
-| Validation | SQL control framework verifying infrastructure and AI objects |
-| Languages and formats | SQL, Markdown and CSV |
+| Validation | SQL control framework verifying the final architecture |
+| Project documentation | SQL, configuration records, screenshots and execution evidence |
+
+---
+
+## What Makes This More Than a Chatbot
+
+The Agent is not operating directly over a single raw table.
+
+It sits on top of a deliberately designed data architecture:
+
+```text
+Source data
+    ↓
+AI enrichment
+    ↓
+Maintained Dynamic Table
+    ↓
+Semantic business model
+    ↓
+Search and retrieval service
+    ↓
+Tool-enabled Agent
+    ↓
+Role-aware governance
+    ↓
+Automated validation
+```
+
+This matters because useful enterprise AI systems require more than a prompt interface.
+
+They require:
+
+- Trusted source data
+- Repeatable transformations
+- Clearly modelled business relationships
+- Retrieval mechanisms
+- Governed access
+- Operational tools
+- Testable outputs
 
 ---
 
 ## Business Problem
 
-Marketing teams often analyse campaign performance separately from customer feedback.
+Marketing performance and customer experience are often analysed separately.
 
-That creates an incomplete view:
+That creates an incomplete picture:
 
-- Campaign metrics explain **what happened**.
+- Campaign metrics show **what generated attention**.
 - Sales data shows **what customers purchased**.
+- Product data explains **what was being promoted**.
+- Social-media activity shows **how products were discussed**.
 - Support transcripts reveal **why customers were satisfied or dissatisfied**.
-- Social-media activity indicates **how products were discussed externally**.
 
-This project brings those signals into one governed Snowflake environment so an AI Agent can connect operational performance with customer experience.
+This project brings those signals into one governed Snowflake environment.
 
-The result is an intelligence layer capable of answering questions such as:
+The resulting Agent can answer questions such as:
 
-- Which campaigns generated the most engagement?
-- How is campaign activity related to product performance?
-- Which categories receive the most negative customer feedback?
-- What are the main complaints found in support cases?
-- Can the findings be presented visually or sent by email?
+- Which campaigns generated the highest engagement?
+- How does campaign activity relate to product performance?
+- Which product categories have the lowest customer sentiment?
+- What complaints appear most frequently in support cases?
+- Can the analysis be visualised and shared by email?
+- Should restricted users see the same underlying engagement values as administrators?
 
 ---
 
-## Architecture
+# Architecture
 
 ```mermaid
 flowchart LR
@@ -84,12 +140,12 @@ flowchart LR
         SC[Support Cases]
     end
 
-    subgraph Enrichment["AI Enrichment"]
-        SENT[Cortex AI Sentiment]
-        CLASS[Cortex AI Classification]
+    subgraph Enrichment["Cortex AI Enrichment"]
+        SENT[AI Sentiment]
+        CLASS[AI Classification]
     end
 
-    subgraph Pipeline["Live Data Pipeline"]
+    subgraph Pipeline["Automated Data Pipeline"]
         DT[ENRICHED_MARKETING_INTELLIGENCE<br/>Dynamic Table]
     end
 
@@ -99,20 +155,20 @@ flowchart LR
         AGENT[MarketingAgent]
     end
 
-    subgraph Tools["Agent Tools"]
+    subgraph AgentTools["Agent Tools"]
         ANALYST[Structured Analytics]
         SEARCH[Campaign Retrieval]
         EMAIL[SEND_EMAIL Procedure]
     end
 
     subgraph Governance["Security and Governance"]
-        VIEW[Secure Marketing View]
+        SECURE[Secure Marketing View]
         ROLE[Restricted Marketing Role]
         MASK[Dynamic Masking Policy]
     end
 
-    subgraph Validation["System Validation"]
-        TEST[SQL Validation Framework]
+    subgraph Validation["Validation Framework"]
+        TEST[SQL Control Wrapper]
     end
 
     SC --> SENT
@@ -138,34 +194,35 @@ flowchart LR
     AGENT --> SEARCH
     AGENT --> EMAIL
 
-    M --> VIEW
-    MASK --> VIEW
-    ROLE --> VIEW
+    M --> SECURE
+    MASK --> SECURE
+    ROLE --> SECURE
 
     DT --> TEST
     SV --> TEST
     CS --> TEST
     AGENT --> TEST
+    SECURE --> TEST
 ```
 
 ---
 
-## End-to-End Flow
+## End-to-End Data Flow
 
 ```text
 Marketing, product, sales, social-media and support data
                          ↓
-        Cortex AI sentiment and classification
+        Cortex AI sentiment and issue classification
                          ↓
-      Live ENRICHED_MARKETING_INTELLIGENCE table
+     ENRICHED_MARKETING_INTELLIGENCE Dynamic Table
                          ↓
-          Semantic View + Cortex Search service
+           Semantic View and Cortex Search
                          ↓
-          Marketing and Sales Intelligence Agent
+       Marketing and Sales Intelligence Agent
                          ↓
-      Analytics, retrieval, charts and email delivery
+     Analytics, retrieval, charts and email delivery
                          ↓
-       RBAC, secure views and data masking controls
+       RBAC, secure view and Dynamic Data Masking
                          ↓
              Automated SQL validation
 ```
@@ -174,11 +231,11 @@ Marketing, product, sales, social-media and support data
 
 # Implementation
 
-## 1. Environment Provisioning
+## 1. Snowflake Environment Provisioning
 
-The setup script creates the Snowflake environment used throughout the project.
+The setup script creates the Snowflake environment required by the project.
 
-### Main environment
+### Core environment
 
 ```text
 Role:      SNOWFLAKE_INTELLIGENCE_ADMIN
@@ -197,21 +254,26 @@ SOCIAL_MEDIA
 SUPPORT_CASES
 ```
 
-### Additional objects
+### Supporting resources
 
-The environment also provisions supporting resources such as:
+The setup also provisions supporting Snowflake objects such as:
 
-- Snowflake stages
-- Notification integration
-- Email-delivery stored procedure
-- Roles and access grants
+- Internal stages
+- Access roles and grants
 - Validation utilities
+- Notification integration
+- `SEND_EMAIL()` stored procedure
+- Warehouse and schema resources
 
 ### Setup file
 
 ```text
-sql/00_setup/00_setup.sql
+snowflake-end-to-end-ai-agent-pipeline/sql/00_setup/00_setup.sql
 ```
+
+### Setup evidence
+
+![Environment setup success](snowflake-end-to-end-ai-agent-pipeline/docs/screenshots/01-setup-success.png)
 
 ---
 
@@ -219,15 +281,17 @@ sql/00_setup/00_setup.sql
 
 Customer-support transcripts begin as unstructured text.
 
-The enrichment layer converts those transcripts into features that can be queried and analysed using SQL.
+The enrichment stage converts them into measurable analytical features using Snowflake Cortex AI.
 
-### Enrichment functions
+### Sentiment analysis
 
 ```sql
 SNOWFLAKE.CORTEX.AI_SENTIMENT(transcript)
 ```
 
-Generates a sentiment score representing the emotional direction of a customer interaction.
+This produces a sentiment score representing the emotional direction of a support interaction.
+
+### Issue classification
 
 ```sql
 SNOWFLAKE.CORTEX.AI_CLASSIFY(
@@ -236,29 +300,52 @@ SNOWFLAKE.CORTEX.AI_CLASSIFY(
 )
 ```
 
-Classifies each transcript into a defined support category.
+This assigns each transcript to a defined business category.
 
-### Why enrich before agent execution?
+### Why pre-enrich the text?
 
-Precomputing the features improves the architecture in several ways:
+Persisting AI-generated features improves the design in several ways:
 
-- The Agent does not need to reinterpret every transcript for every question.
-- Sentiment becomes available as a measurable analytical value.
-- Issue categories become reusable across queries and dashboards.
-- Transformation logic remains visible and testable in SQL.
-- Downstream tools operate on a more consistent data contract.
+- The same transcript does not need to be reprocessed for every question.
+- Sentiment becomes available as a reusable analytical measure.
+- Issue classifications can be queried using normal SQL.
+- Transformation logic remains visible and testable.
+- Downstream models receive a more consistent data contract.
+- Agent responses can be grounded in prepared features rather than repeated interpretation.
 
 ### Enrichment file
 
 ```text
-sql/01_enrichment/01_cortex_ai_enrichment.sql
+snowflake-end-to-end-ai-agent-pipeline/sql/01_enrichment/01_cortex_ai_enrichment.sql
 ```
 
-![Cortex AI enrichment results](docs/screenshots/02-cortex-ai-enrichment.png)
+### Enrichment evidence
+
+![Cortex AI enrichment results](snowflake-end-to-end-ai-agent-pipeline/docs/screenshots/02-cortex-ai-enrichment.png)
 
 ---
 
-## 3. Live Dynamic Table Pipeline
+## 3. Marketing Data Ingestion
+
+Updated campaign data is loaded into:
+
+```text
+DASH_DB_SI.RETAIL.MARKETING_CAMPAIGN_METRICS
+```
+
+The source CSV is retained in the repository for reproducibility:
+
+```text
+snowflake-end-to-end-ai-agent-pipeline/data/marketing_data.csv
+```
+
+### Load evidence
+
+![Marketing data loaded](snowflake-end-to-end-ai-agent-pipeline/docs/screenshots/03-marketing-data-loaded.png)
+
+---
+
+## 4. Live AI Enrichment Pipeline
 
 The project creates the following Dynamic Table:
 
@@ -266,9 +353,9 @@ The project creates the following Dynamic Table:
 DASH_DB_SI.RETAIL.ENRICHED_MARKETING_INTELLIGENCE
 ```
 
-It joins campaign performance with product-level customer feedback and maintains the enriched result as source data changes.
+The table joins campaign engagement with product-level customer feedback and maintains AI-generated sentiment as the underlying data changes.
 
-### Pipeline logic
+### Dynamic Table implementation
 
 ```sql
 CREATE OR REPLACE DYNAMIC TABLE enriched_marketing_intelligence
@@ -285,25 +372,37 @@ JOIN support_cases s
     ON m.category = s.product;
 ```
 
-### Why a Dynamic Table?
+### Why use a Dynamic Table?
 
-A Dynamic Table allows the desired transformation output to be defined declaratively while Snowflake manages refresh behaviour.
+A Dynamic Table defines the desired output declaratively while Snowflake manages refresh behaviour.
 
-This separates the analytical model from manual refresh orchestration and creates a maintained bridge between marketing data and customer sentiment.
+This creates a maintained connection between:
+
+```text
+Campaign performance
+        +
+Customer-support feedback
+        +
+AI-generated sentiment
+```
+
+It avoids treating enrichment as a one-time analysis and instead turns it into a reusable pipeline object.
 
 ### Pipeline file
 
 ```text
-sql/02_pipeline/02_live_enrichment_pipeline.sql
+snowflake-end-to-end-ai-agent-pipeline/sql/02_pipeline/02_live_enrichment_pipeline.sql
 ```
 
-![Live enrichment Dynamic Table](docs/screenshots/04-live-dynamic-table.png)
+### Dynamic Table evidence
+
+![Live enrichment Dynamic Table](snowflake-end-to-end-ai-agent-pipeline/docs/screenshots/04-live-dynamic-table.png)
 
 ---
 
-## 4. Semantic View
+## 5. Semantic View
 
-The Semantic View provides a business-friendly analytical layer over the project data.
+The Semantic View creates a business-friendly analytical model over the project data.
 
 ### Configuration
 
@@ -313,14 +412,14 @@ Location:  DASH_DB_SI.RETAIL
 Warehouse: DASH_WH_SI
 ```
 
-It contains:
+### Included data objects
 
 - Marketing campaign metrics
 - Products
 - Sales
 - Social-media activity
 - Support cases
-- Enriched campaign and sentiment data
+- Enriched marketing and sentiment data
 
 ### Modelled relationship
 
@@ -338,21 +437,25 @@ Many to One
 
 ### Why the Semantic View matters
 
-The Semantic View gives business meaning to the physical data model. It allows the Agent to reason over measures, dimensions and relationships rather than depending entirely on raw table names.
+The Agent needs more than access to raw tables.
 
-### Configuration documentation
+The Semantic View gives the physical data model business meaning by defining relationships, measures and dimensions that can be used for natural-language analytics.
+
+### Configuration file
 
 ```text
-agent/01_semantic_view_configuration.md
+snowflake-end-to-end-ai-agent-pipeline/agent/01_semantic_view_configuration.md
 ```
 
-![Semantic View configuration](docs/screenshots/05-semantic-view.png)
+### Semantic modelling evidence
 
-![Semantic relationship](docs/screenshots/06-semantic-relationship.png)
+![Semantic View configuration](snowflake-end-to-end-ai-agent-pipeline/docs/screenshots/05-semantic-view.png)
+
+![Semantic relationship](snowflake-end-to-end-ai-agent-pipeline/docs/screenshots/06-semantic-relationship.png)
 
 ---
 
-## 5. Cortex Search
+## 6. Cortex Search
 
 The project creates a Cortex Search service named:
 
@@ -370,33 +473,39 @@ Columns:       All
 Warehouse:     DASH_WH_SI
 ```
 
-Cortex Search gives the Agent a retrieval tool for campaign-level information.
+### Purpose
+
+Cortex Search gives the Agent a retrieval layer over campaign information.
 
 This complements the Semantic View:
 
-- The Semantic View handles structured analytical questions.
-- Cortex Search handles retrieval-oriented requests.
-- The Agent chooses the appropriate tool based on the user’s question.
+| Component | Responsibility |
+|---|---|
+| Semantic View | Metrics, dimensions, relationships and structured analysis |
+| Cortex Search | Retrieval-oriented access to indexed campaign information |
+| MarketingAgent | Selects and coordinates the appropriate tool |
 
-### Configuration documentation
+### Configuration file
 
 ```text
-agent/02_cortex_search_configuration.md
+snowflake-end-to-end-ai-agent-pipeline/agent/02_cortex_search_configuration.md
 ```
 
-![Active Cortex Search service](docs/screenshots/07-cortex-search-active.png)
+### Search evidence
+
+![Active Cortex Search service](snowflake-end-to-end-ai-agent-pipeline/docs/screenshots/07-cortex-search-active.png)
 
 ---
 
-## 6. Marketing and Sales Intelligence Agent
+## 7. Marketing and Sales Intelligence Agent
 
-The central application object is:
+The central AI application is:
 
 ```text
 DASH_DB_SI.RETAIL.MarketingAgent
 ```
 
-The Agent was designed to bridge two forms of intelligence:
+The Agent connects two forms of intelligence:
 
 ```text
 What happened?
@@ -411,80 +520,115 @@ Why did it happen?
 The Agent can:
 
 - Rank campaigns by engagement
-- Analyse campaign and product relationships
-- Compare campaign clicks with customer satisfaction
-- Summarise customer complaints
+- Analyse campaign-to-product relationships
+- Compare clicks with customer sentiment
+- Summarise support complaints
+- Retrieve campaign information
 - Generate charts
-- Retrieve indexed campaign information
-- Send generated findings through email
+- Deliver findings through email
+- Operate over a governed Snowflake data layer
 
 ### Agent tools
 
 | Tool | Purpose |
 |---|---|
-| `semantic_view` | Structured analysis across campaign, product, sales, social-media, support and sentiment data |
+| `semantic_view` | Structured analysis across campaigns, products, sales, social media, support and sentiment |
 | `Search` | Retrieval through the `CAMPAIGN_SEARCH` Cortex Search service |
-| `Send_Email` | Delivery of Agent findings using the `SEND_EMAIL()` procedure |
+| `Send_Email` | Distribution of Agent findings through `SEND_EMAIL()` |
 
 ### Agent configuration
 
 ```text
-agent/03_marketing_agent_configuration.md
+snowflake-end-to-end-ai-agent-pipeline/agent/03_marketing_agent_configuration.md
 ```
 
-### Validation prompts
+### Agent validation prompts
 
 ```text
-agent/04_agent_validation_prompts.md
+snowflake-end-to-end-ai-agent-pipeline/agent/04_agent_validation_prompts.md
 ```
+
+### Agent configuration evidence
+
+![Marketing Agent created](snowflake-end-to-end-ai-agent-pipeline/docs/screenshots/08-agent-created.png)
+
+![Semantic Analyst tool](snowflake-end-to-end-ai-agent-pipeline/docs/screenshots/09-analyst-tool.png)
+
+![Cortex Search tool](snowflake-end-to-end-ai-agent-pipeline/docs/screenshots/10-search-tool.png)
+
+![Email delivery tool](snowflake-end-to-end-ai-agent-pipeline/docs/screenshots/11-email-tool.png)
 
 ---
 
-## 7. Agent Validation
+# Agent Validation
 
-The Agent was tested using business-focused questions rather than only technical queries.
+The Agent was tested using realistic business questions rather than only technical object checks.
 
-### Question 1
+## Test 1 — Campaign ranking
 
 ```text
 What are the top 5 campaigns by clicks?
 ```
 
-Tests ranking and structured campaign analysis.
+This tests:
 
-### Question 2
+- Metric selection
+- Campaign ranking
+- Structured analytical reasoning
+- Visual presentation
+
+![Top campaigns by clicks](snowflake-end-to-end-ai-agent-pipeline/docs/screenshots/12-top-campaigns.png)
+
+---
+
+## Test 2 — Campaign and product relationships
 
 ```text
 Show me all campaign performance metrics and its relationship to the product.
 ```
 
-Tests multi-table relationships and metric retrieval.
+This tests:
 
-### Question 3
+- Semantic relationships
+- Multi-object analysis
+- Metric retrieval
+- Product-level context
+
+![Campaign and product metrics](snowflake-end-to-end-ai-agent-pipeline/docs/screenshots/13-campaign-product-metrics.png)
+
+---
+
+## Test 3 — Engagement and customer satisfaction
 
 ```text
 What is the relationship between campaign clicks and customer satisfaction by category?
 ```
 
-Tests the integration of campaign performance with AI-generated sentiment.
+This tests the integration of:
 
-### Question 4
+- Campaign clicks
+- Product categories
+- AI-generated sentiment
+- Cross-domain analysis
+
+![Clicks and satisfaction analysis](snowflake-end-to-end-ai-agent-pipeline/docs/screenshots/14-clicks-vs-satisfaction.png)
+
+---
+
+## Test 4 — Customer complaint analysis
 
 ```text
 What are the main customer complaints in support cases?
 ```
 
-Tests retrieval and interpretation of unstructured support information.
+This tests:
 
-### Evidence
+- Unstructured-text understanding
+- Customer-support analysis
+- Issue identification
+- Retrieval and summarisation
 
-![Top campaigns](docs/screenshots/12-top-campaigns.png)
-
-![Campaign and product metrics](docs/screenshots/13-campaign-product-metrics.png)
-
-![Clicks and satisfaction analysis](docs/screenshots/14-clicks-vs-satisfaction.png)
-
-![Customer complaint analysis](docs/screenshots/15-customer-complaints.png)
+![Customer complaint analysis](snowflake-end-to-end-ai-agent-pipeline/docs/screenshots/15-customer-complaints.png)
 
 ---
 
@@ -492,7 +636,7 @@ Tests retrieval and interpretation of unstructured support information.
 
 ## 8. Role-Based Access Control
 
-The optional security implementation creates a restricted role:
+The governance implementation creates a restricted role:
 
 ```text
 MARKETING_INTELLIGENCE_ROLE
@@ -503,14 +647,14 @@ The role receives only the access required to:
 - Use the project warehouse
 - Access the project database
 - Access the `RETAIL` schema
-- Query the secure marketing view
-- Use required Snowflake Cortex capabilities
+- Query the governed marketing view
+- Use the required Snowflake Cortex database role
 
-This demonstrates a separation between administrative access and business-user access.
+This separates administrative access from business-user access.
 
 ---
 
-## 9. Secure View
+## 9. Secure Marketing View
 
 The project creates:
 
@@ -518,15 +662,16 @@ The project creates:
 DASH_DB_SI.RETAIL.MARKETING_INTELLIGENCE_VIEW
 ```
 
-The secure view exposes selected campaign fields through a governed interface instead of requiring consumers to query the underlying table directly.
+The secure view exposes selected campaign fields through a governed interface instead of requiring restricted users to query the base table directly.
 
-This supports:
+### Benefits
 
 - Controlled data exposure
-- Reduced access to base objects
 - Consistent field naming
+- Reduced direct base-table access
 - Policy enforcement
 - Safer downstream consumption
+- Clear separation between raw storage and governed access
 
 ---
 
@@ -544,7 +689,7 @@ is applied to:
 DASH_DB_SI.RETAIL.MARKETING_CAMPAIGN_METRICS.CLICKS
 ```
 
-### Policy behaviour
+### Role-aware behaviour
 
 ```text
 SNOWFLAKE_INTELLIGENCE_ADMIN
@@ -557,31 +702,33 @@ MARKETING_INTELLIGENCE_ROLE
 → Sees 0 instead of the protected engagement values
 ```
 
-The policy demonstrates that identical SQL queries can return different values according to the active role.
+The same query therefore returns different results based on the active role.
 
-### Security file
+This demonstrates that governance remains enforced at the data layer rather than depending only on the behaviour of the Agent interface.
+
+### Security implementation
 
 ```text
-sql/03_security/03_rbac_and_masking.sql
+snowflake-end-to-end-ai-agent-pipeline/sql/03_security/03_rbac_and_masking.sql
 ```
 
 ### Administrator result
 
-![Administrator unmasked data](docs/screenshots/16-admin-unmasked-data.png)
+![Administrator unmasked data](snowflake-end-to-end-ai-agent-pipeline/docs/screenshots/16-admin-unmasked-data.png)
 
 ### Restricted-role result
 
-![Restricted role masked data](docs/screenshots/17-marketing-role-masked-data.png)
+![Restricted role masked data](snowflake-end-to-end-ai-agent-pipeline/docs/screenshots/17-marketing-role-masked-data.png)
 
 ---
 
-# Automated Validation
+# Automated System Validation
 
-## Validation Framework
+## Validation Strategy
 
-The final validation script uses SQL controls to verify the required environment and AI architecture.
+The final SQL validation wrapper verifies the required infrastructure, pipeline and AI objects.
 
-The validation checks include:
+The controls include:
 
 - Required Snowflake databases
 - Required stages
@@ -589,25 +736,25 @@ The validation checks include:
 - Enriched Dynamic Table
 - Semantic View
 - Cortex Search service
-- Agent infrastructure
-- End-to-end project completion
+- Agent-related architecture
+- End-to-end lab completion
 
 ### Validation file
 
 ```text
-sql/04_validation/04_ai_agent_validation.sql
+snowflake-end-to-end-ai-agent-pipeline/sql/04_validation/04_ai_agent_validation.sql
 ```
 
-## Final Result
+## Verified Result
 
 ```text
 You've successfully completed the From Zero to Agents lab!
 ```
 
-![Final AI Agent validation](docs/screenshots/18-final-validation-success.png)
+![Final AI Agent validation](snowflake-end-to-end-ai-agent-pipeline/docs/screenshots/18-final-validation-success.png)
 
 > [!TIP]
-> The validation result provides repeatable evidence that the required architecture was created successfully. It is stronger than relying only on screenshots of individual objects.
+> The validation wrapper provides repeatable evidence that the required architecture exists. It is stronger than relying only on screenshots of individual objects.
 
 ---
 
@@ -669,96 +816,107 @@ snowflake-end-to-end-ai-agent-pipeline/
 
 # Execution Order
 
-## Environment
+## Environment setup
 
 ```text
-1. sql/00_setup/00_setup.sql
+1. snowflake-end-to-end-ai-agent-pipeline/sql/00_setup/00_setup.sql
 ```
 
 ## AI enrichment
 
 ```text
-2. sql/01_enrichment/01_cortex_ai_enrichment.sql
+2. snowflake-end-to-end-ai-agent-pipeline/sql/01_enrichment/01_cortex_ai_enrichment.sql
 ```
 
-## Live pipeline
+## Live enrichment pipeline
 
 ```text
-3. Load data/marketing_data.csv
-4. sql/02_pipeline/02_live_enrichment_pipeline.sql
+3. Load snowflake-end-to-end-ai-agent-pipeline/data/marketing_data.csv
+4. Run snowflake-end-to-end-ai-agent-pipeline/sql/02_pipeline/02_live_enrichment_pipeline.sql
 ```
 
 ## Intelligence layer
 
 ```text
-5. Configure the Semantic View
+5. Configure SEMANTIC_VIEW
 6. Create CAMPAIGN_SEARCH
 7. Create MarketingAgent
-8. Add semantic, search and email tools
-9. Run the prompts in agent/04_agent_validation_prompts.md
+8. Add the semantic, search and email tools
+9. Run the prompts in:
+   snowflake-end-to-end-ai-agent-pipeline/agent/04_agent_validation_prompts.md
 ```
 
 ## Governance
 
 ```text
-10. sql/03_security/03_rbac_and_masking.sql
+10. Run:
+    snowflake-end-to-end-ai-agent-pipeline/sql/03_security/03_rbac_and_masking.sql
 ```
 
 ## Final validation
 
 ```text
-11. sql/04_validation/04_ai_agent_validation.sql
+11. Run:
+    snowflake-end-to-end-ai-agent-pipeline/sql/04_validation/04_ai_agent_validation.sql
 ```
 
 ---
 
 # Engineering Decisions
 
-## Why enrich unstructured text before the Agent?
+## Why enrich unstructured data before Agent execution?
 
-Persisting sentiment and classification results creates reusable analytical features and avoids requiring the Agent to repeatedly process the same transcripts.
+Persisting sentiment and classification results creates reusable analytical features and avoids repeatedly processing identical transcripts.
 
-## Why use Dynamic Tables?
+## Why use a Dynamic Table?
 
-Dynamic Tables provide a declarative method for maintaining the enriched dataset as its source tables change.
+The Dynamic Table maintains the AI-enriched dataset as its source data changes, turning enrichment into a repeatable pipeline rather than a one-time query.
 
-## Why combine a Semantic View with Cortex Search?
+## Why use both a Semantic View and Cortex Search?
 
-The tools serve different purposes:
+The components solve different problems:
 
-- The Semantic View supports metrics, dimensions and relationships.
-- Cortex Search supports retrieval over indexed campaign content.
-- The Agent coordinates both tools behind a conversational interface.
+- The Semantic View supports measures, dimensions and relationships.
+- Cortex Search supports indexed retrieval.
+- The Agent coordinates both tools through a single conversational interface.
 
 ## Why add an email tool?
 
-The stored procedure turns analysis into an operational workflow. A user can move from asking a question to distributing the result without leaving the Agent experience.
+The stored procedure turns analysis into an operational workflow. A user can move from asking a question to distributing the answer without leaving the Agent experience.
 
-## Why implement masking?
+## Why implement governance at the data layer?
 
-AI applications should not bypass data governance.
+An AI application should not bypass normal access controls.
 
-Applying the masking policy at the data layer means protected values remain governed regardless of whether they are accessed through SQL, a view or an AI-powered interface.
+RBAC, secure views and Dynamic Data Masking ensure protected values remain governed regardless of whether they are accessed through:
+
+- Direct SQL
+- A secure view
+- A Semantic View
+- An AI Agent
+- Another downstream application
 
 ---
 
 # Technical Stack
 
-| Technology | Use |
+| Technology | Application |
 |---|---|
 | Snowflake | Data platform and governance environment |
 | Snowflake Cortex AI | Sentiment analysis and text classification |
 | Dynamic Tables | Maintained AI-enrichment pipeline |
 | Semantic Views | Business-friendly analytical modelling |
 | Cortex Search | Retrieval layer |
-| Snowflake Agents | Tool orchestration and conversational interface |
-| Snowflake CoWork | Agent testing and interaction |
+| Snowflake Agents | Tool orchestration and conversational analytics |
+| Snowflake CoWork | Agent interaction and validation |
 | SQL | Provisioning, transformation, security and validation |
-| Dynamic Data Masking | Role-aware protection |
-| RBAC | Least-privilege access control |
+| Dynamic Data Masking | Role-aware data protection |
+| RBAC | Access-control architecture |
 | Secure Views | Governed data exposure |
-| Stored Procedures | Email delivery tool |
-| GitHub | Source control and project documentation |
+| Stored Procedures | Email-delivery capability |
+| CSV | Marketing-data input |
+| Markdown | Configuration and validation documentation |
+| GitHub | Source control and technical portfolio |
 
 ---
 
@@ -778,9 +936,10 @@ Agent tool orchestration
 Sentiment analysis
 Text classification
 Data governance
-Role-based access control
+Role-Based Access Control
 Dynamic Data Masking
 Secure views
+Stored procedures
 Automated validation
 Technical documentation
 ```
@@ -792,14 +951,15 @@ Technical documentation
 This repository provides evidence that I can:
 
 - Build a complete data-to-agent workflow
-- Integrate structured metrics with unstructured text
+- Combine structured business data with unstructured customer feedback
 - Create reusable AI-enriched data products
 - Model business relationships for natural-language analytics
 - Configure retrieval and analytical tools for an Agent
-- Test the Agent with realistic business questions
-- Apply role-based access and masking controls
-- Validate the final architecture using repeatable SQL checks
-- Document technical configuration and execution evidence clearly
+- Test an Agent using realistic business questions
+- Turn Agent outputs into an operational email workflow
+- Apply role-aware data protection
+- Validate a multi-component architecture through repeatable SQL controls
+- Organise code, configuration, evidence and documentation in GitHub
 
 ---
 
@@ -818,24 +978,25 @@ connections.toml
 Authentication secrets
 ```
 
-All private connection and authentication information remains outside the repository.
+Private connection and authentication information remains outside the repository.
 
 ---
 
-# Project Context
+# Scope and Limitations
 
 This implementation was completed in a controlled Snowflake learning environment using Snowflake-provided sample data and workshop resources.
 
-The project demonstrates production-aligned architecture patterns, but it is not presented as an independently deployed enterprise production system.
+It demonstrates production-aligned engineering patterns, but it is not presented as an independently deployed enterprise production system.
 
-A production implementation would also require:
+A production implementation would additionally require:
 
 - Separate development, testing and production environments
 - Infrastructure as code
 - CI/CD deployment controls
-- Automated regression tests
+- Automated regression testing
 - Monitoring and alerting
 - Cost and performance controls
+- Centralised secrets management
 - Formal data ownership
 - Incident-management procedures
 - Documented service-level objectives
@@ -844,6 +1005,6 @@ A production implementation would also require:
 
 # Acknowledgements
 
-This project was completed through Snowflake's **From Zero to Agents: Building End-to-End Data Pipelines for an AI Agent** workshop.
+This project was completed through Snowflake’s **From Zero to Agents: Building End-to-End Data Pipelines for an AI Agent** workshop.
 
-Snowflake provided the original scenario, sample data, setup framework and validation controls. This repository documents my completed implementation, architecture, AI-enrichment workflow, Agent configuration, security controls and validation evidence.
+Snowflake provided the original scenario, sample data, environment setup and validation framework. This repository documents my completed implementation, AI-enrichment pipeline, Semantic View, Cortex Search service, Marketing Agent, custom tools, security controls and validation evidence.
